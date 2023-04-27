@@ -59,7 +59,7 @@ function registerEvents() {
 
   
   
-  window.addEventListener("keydown", playNotes)
+  window.addEventListener("keydown", playNote)
 }
 
 window.addEventListener("load", registerEvents)
