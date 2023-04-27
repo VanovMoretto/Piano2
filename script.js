@@ -57,10 +57,7 @@ function registerEvents() {
           });
   });
 
-  
-  
   window.addEventListener("keydown", playNote)
 }
-
 window.addEventListener("load", registerEvents)
 
