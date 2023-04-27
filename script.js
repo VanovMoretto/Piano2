@@ -47,13 +47,20 @@ function removePlayingClass(event) {
 }
 
 
-  // click with mouse
-  keys.forEach( function(key) {
-    key.addEventListener("click", playNote)
-    key.addEventListener("transitionend", removePlayingClass)
-  })
+function registerEvents() {
+  keys.forEach(function (key) {
+      key.addEventListener("click", playNote)
+      key.addEventListener("transitionend", removePlayingClass)
+      key.addEventListener('touchstart', playNote)
+      key.addEventListener('touchend', (e) => {
+            e.preventDefault();
+          });
+  });
 
-  // keyboard type
-  window.addEventListener("keydown", playNote)
+  
+  
+  window.addEventListener("keydown", playNotes)
+}
 
+window.addEventListener("load", registerEvents)
 
